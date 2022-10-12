@@ -16,17 +16,28 @@ Change the values in the new created `.env` file.
 cargo run --bin create-account
 ```
 
-2. Create Collection NFT
+2. Get your address:
+
+```bash
+cargo run --bin get-address
+```
+
+Now you need to add tokens to the address. You can use the [Shimmer Faucet](https://faucet.testnet.shimmer.network/) in the testnet.
+
+3. Create Collection NFT
 
 ```bash
 cargo run --bin create-collection-nft
 ```
 
-3. Mint NFTs
+4. Mint NFTs
 
 ```bash
 cargo run --bin create-nfts
 ```
 
+5. Send NFTs to addresses in the CSV file.
 
+```bash
 cargo run --bin send-nfts-to-csv < drop.csv
+```
