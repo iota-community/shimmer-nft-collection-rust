@@ -16,8 +16,17 @@ Change the values in the new created `.env` file.
 cargo run --bin create-account
 ```
 
-1. Create Collection NFT
+2. Create Collection NFT
 
 ```bash
 cargo run --bin create-collection-nft
 ```
+
+3. Mint NFTs
+
+```bash
+cargo run --bin create-nfts
+```
+
+
+cargo run --bin send-nfts-to-csv < drop.csv

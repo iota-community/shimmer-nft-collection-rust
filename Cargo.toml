@@ -8,6 +8,10 @@ name = "create-account"
 path = "src/create-account/main.rs"
 
 [[bin]]
+name = "get-address"
+path = "src/get-address/main.rs"
+
+[[bin]]
 name = "create-collection-nft"
 path = "src/create-collection-nft/main.rs"
 
@@ -19,8 +23,14 @@ path = "src/create-nfts/main.rs"
 name = "get-balance"
 path = "src/get-balance/main.rs"
 
+[[bin]]
+name = "send-nfts-to-csv"
+path = "src/send-nfts-to-csv/main.rs"
+
+
 [dependencies]
 tokio = { version = "1.21.2", default-features = false }
 iota-wallet = { git = "https://github.com/iotaledger/wallet.rs", branch = "develop" }
 iota-client = { git = "https://github.com/iotaledger/iota.rs", branch = "develop" }
 dotenv = { version =  "0.15.0", default-features = false }
+csv = "1.1"

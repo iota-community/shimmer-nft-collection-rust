@@ -14,22 +14,18 @@ use iota_wallet::{account_manager::AccountManager, NftOptions, Result, ClientOpt
 async fn main() -> Result<()> {
     // This example uses dotenv, which is not safe for use in production
     dotenv().ok();
-    println!("1");
 
     // Create the account manager
     let manager = AccountManager::builder()
         .finish()
         .await?;
-    println!("2");
     // Get the account we generated with `01_create_wallet`
     let account = manager.get_account("Alice").await?;
-    println!("3");
     account.sync(None).await?;
     // Set the stronghold password
     manager
         .set_stronghold_password(&env::var("STRONGHOLD_PASSWORD").unwrap())
         .await?;
-    println!("4");
     let nft_options = vec![NftOptions {
         address: None,
         immutable_metadata: Some(
