@@ -10,9 +10,14 @@ path = "src/create-account/main.rs"
 [[bin]]
 name = "create-collection-nft"
 path = "src/create-collection-nft/main.rs"
+
 [[bin]]
 name = "create-nfts"
 path = "src/create-nfts/main.rs"
+
+[[bin]]
+name = "get-balance"
+path = "src/get-balance/main.rs"
 
 [dependencies]
 tokio = { version = "1.21.2", default-features = false }
