@@ -1,0 +1,4 @@
+/target
+walletdb
+.env
+wallet.stronghold

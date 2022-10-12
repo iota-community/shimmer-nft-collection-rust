@@ -1,0 +1,17 @@
+[package]
+name = "shimmer-nft-collection-rust"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "create-account"
+path = "src/create-account/main.rs"
+
+[[bin]]
+name = "create-collection-nft"
+path = "src/create-collection-nft/main.rs"
+
+[dependencies]
+tokio = { version = "1.21.2", default-features = false }
+iota-wallet = { git = "https://github.com/iotaledger/wallet.rs", branch = "develop" }
+dotenv = { version =  "0.15.0", default-features = false }
