@@ -21,6 +21,7 @@ async fn main() -> Result<()> {
     let account_balance = account.balance().await?;
 
     println!("{:?}", account_balance);
+    println!("{:?}", account_balance.nfts.len());
 
     Ok(())
 }

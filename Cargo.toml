@@ -27,6 +27,10 @@ path = "src/get-balance/main.rs"
 name = "send-nfts-to-csv"
 path = "src/send-nfts-to-csv/main.rs"
 
+[[bin]]
+name = "lock-collection-nft"
+path = "src/lock-collection-nft/main.rs"
+
 
 [dependencies]
 tokio = { version = "1.21.2", default-features = false }
