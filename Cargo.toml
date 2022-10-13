@@ -31,6 +31,10 @@ path = "src/send-nfts-to-csv/main.rs"
 name = "lock-collection-nft"
 path = "src/lock-collection-nft/main.rs"
 
+[[bin]]
+name = "generate-mnemonic"
+path = "src/generate-mnemonic/main.rs"
+
 
 [dependencies]
 tokio = { version = "1.21.2", default-features = false }

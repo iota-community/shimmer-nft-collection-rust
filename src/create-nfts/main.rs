@@ -19,9 +19,9 @@ async fn main() -> Result<()> {
     // This example uses dotenv, which is not safe for use in production
     dotenv().ok();
 
-    let nft_collection_size = 100;
+    let nft_collection_size = 10;
     // Set this to the NFT id from the mint_issuer_nft example
-    let issuer_nft_id = NftId::from_str("0xcc3fa4d255dfeb6e50f02a845c9d1a9597defecea86c801ef9930af935b49bf4").unwrap();
+    let issuer_nft_id = NftId::from_str("0x8a1305232bc9ca2dc68ff8e7e09ffe958f5ed8d2f24f7d2f8b571982d9c46824").unwrap();
 
     // Create the account manager
     let manager = AccountManager::builder().finish().await?;
@@ -43,7 +43,8 @@ async fn main() -> Result<()> {
     for index in 0..nft_collection_size {
         nft_options.push(NftOptions {
             address: None,
-            immutable_metadata: Some(format!("{{\"standard\":\"IRC27\",\"version\":\"v1.0\",\"type\":\"video/mp4\",\"uri\":\"ipfs://wrongcVm9fx47YXNTkhpMEYSxCD3Bqh7PJYr7eo5Ywrong\",\"name\":\"Shimmer OG NFT #{index}\",\"description\":\"The Shimmer OG NFT was handed out 1337 times by the IOTA Foundation to celebrate the official launch of the Shimmer Network.\",\"issuerName\":\"IOTA Foundation\",\"collectionId\":\"{issuer_nft_id}\",\"collectionName\":\"Shimmer OG\" }}").as_bytes().to_vec()),
+            // immutable_metadata: Some(format!("{{\"standard\":\"IRC27\",\"version\":\"v1.0\",\"type\":\"video/mp4\",\"uri\":\"ipfs://wrongcVm9fx47YXNTkhpMEYSxCD3Bqh7PJYr7eo5Ywrong\",\"name\":\"Shimmer OG NFT #{index}\",\"description\":\"The Shimmer OG NFT was handed out 1337 times by the IOTA Foundation to celebrate the official launch of the Shimmer Network.\",\"issuerName\":\"IOTA Foundation\",\"collectionId\":\"{issuer_nft_id}\",\"collectionName\":\"Shimmer OG\" }}").as_bytes().to_vec()),
+            immutable_metadata: Some(format!("{{\"standard\":\"IRC27\",\"version\":\"v1.0\",\"type\":\"image/png\",\"uri\":\"https://robohash.org/shimmer-#{index}.png\",\"name\":\"Shimmer Test Robot #{index}\",\"description\":\"The Shimmer Test Robot NFT Collection. Robots lovingly delivered by Robohash.org.\",\"issuerName\":\"Alice\",\"collectionId\":\"{issuer_nft_id}\",\"collectionName\":\"Shimmer Test Robot\" }}").as_bytes().to_vec()),
             // The NFT address from the NFT we minted in mint_issuer_nft example
             issuer: Some(Address::Nft(NftAddress::new(issuer_nft_id)).to_bech32(bech32_hrp.clone())),
             metadata: None,
