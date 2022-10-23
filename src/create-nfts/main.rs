@@ -19,9 +19,9 @@ async fn main() -> Result<()> {
     // This example uses dotenv, which is not safe for use in production
     dotenv().ok();
 
-    let nft_collection_size = 10;
+    let nft_collection_size = 1337;
     // Set this to the NFT id from the mint_issuer_nft example
-    let issuer_nft_id = NftId::from_str("0x8a1305232bc9ca2dc68ff8e7e09ffe958f5ed8d2f24f7d2f8b571982d9c46824").unwrap();
+    let issuer_nft_id = NftId::from_str("0x0400d736153340a7399b00b14e00c488a3a37785a2f0d034a4eb882bb7190cba").unwrap();
 
     // Create the account manager
     let manager = AccountManager::builder().finish().await?;

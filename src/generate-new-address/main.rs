@@ -26,10 +26,8 @@ async fn main() -> Result<()> {
         .set_stronghold_password(&env::var("STRONGHOLD_PASSWORD").unwrap())
         .await?;
 
-    let addresses = account.addresses().await?;
-    for elem in addresses {
-        println!("address: {}", elem.address().to_bech32());
-    }
+    let address = account.generate_addresses(1, None).await?;
+    println!("Generated address: {:?}", address);
 
     Ok(())
 }

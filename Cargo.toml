@@ -35,6 +35,10 @@ path = "src/lock-collection-nft/main.rs"
 name = "generate-mnemonic"
 path = "src/generate-mnemonic/main.rs"
 
+[[bin]]
+name = "generate-new-address"
+path = "src/generate-new-address/main.rs"
+
 
 [dependencies]
 tokio = { version = "1.21.2", default-features = false }
